@@ -7,6 +7,23 @@ import Policy from "./Policy";
 import Login from "./Login";
 import Registration from "./Registration";
 
+Navigation.setDefaultOptions({
+    statusBar:{
+        backgroundColor:'blue',
+    },
+    topBar:{
+        background:{
+            color:'blue',
+        },
+        title:{
+            color:'white',
+        },
+        backButton:{
+            color:'white'
+        }
+    }
+});
+
 Navigation.registerComponent('HomePage', () => Home);
 
 Navigation.registerComponent('LoginPage', () => Login);
