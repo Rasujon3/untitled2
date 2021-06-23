@@ -6,51 +6,39 @@ import Service from "./Service";
 import Policy from "./Policy";
 import Login from "./Login";
 import Registration from "./Registration";
+import SideMenuScreen from "./SideMenuScreen";
 
-Navigation.setDefaultOptions({
-    statusBar:{
-        backgroundColor:'blue',
-    },
-    topBar:{
-        background:{
-            color:'blue',
-        },
-        title:{
-            color:'white',
-        },
-        backButton:{
-            color:'white'
-        }
-    }
-});
+
 
 Navigation.registerComponent('HomePage', () => Home);
+Navigation.registerComponent('SideMenuScreenPage', () => SideMenuScreen);
 
-Navigation.registerComponent('LoginPage', () => Login);
-Navigation.registerComponent('RegistrationPage', () => Registration);
 
-const stack={
-    children:[
-        {
-            component:{
-                name:'HomePage',
-                options:{
-                    topBar:{
-                        title:{
-                            text:'Home'
-                        }
-                    }
-                }
-            }
-        }
-    ],
-
-}
 
 Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setRoot({
         root: {
-            stack
+            sideMenu:{
+                left:{
+                    component:{
+                        name:"SideMenuScreenPage"
+                    }
+
+                },
+                center:{
+                    component:{
+                        name:"HomePage"
+                    }
+
+                },
+                right:{
+                    component:{
+                        name:"SideMenuScreenPage"
+                    }
+
+                },
+
+            }
         }
-    }).then(r => stack);
+    })
 })
