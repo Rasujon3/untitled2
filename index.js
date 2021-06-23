@@ -11,41 +11,33 @@ Navigation.registerComponent('ContactPage', () => Contact);
 Navigation.registerComponent('ServicePage', () => Service);
 Navigation.registerComponent('PolicyPage', () => Policy);
 
-const stack={
-    children:[
+const bottomTabs = {
+    children: [
         {
-            component:{
-                name:'PolicyPage'
+            component: {
+                name: 'HomePage',
+                options: {bottomTab: {text: 'Home', icon: require('./images/home.png')}}
             }
         },
         {
-            component:{
-                name:'ServicePage'
+            component: {
+                name: 'AboutPage',
+                options: {bottomTab: {text: 'About', icon: require('./images/about.png')}}
             }
         },
         {
-            component:{
-                name:'ContactPage'
-            }
-        },
-        {
-            component:{
-                name:'AboutPage'
-            }
-        },
-        {
-            component:{
-                name:'HomePage'
+            component: {
+                name: 'ContactPage',
+                options: {bottomTab: {text: "Contact", icon: require('./images/contact.png')}}
             }
         }
-    ],
-    option:{}
+    ]
 }
 
 Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setRoot({
         root: {
-            stack
+            bottomTabs
         }
-    });
+    }).then(r => bottomTabs);
 })
