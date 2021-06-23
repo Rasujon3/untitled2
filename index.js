@@ -1,20 +1,18 @@
-import {Navigation} from 'react-native-navigation';
-import App from './App';
+import {Navigation} from "react-native-navigation";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
 
-Navigation.registerComponent('com.myApp.App', () => App);
+Navigation.registerComponent('HomePage',()=>Home);
+Navigation.registerComponent('AboutPage',()=>About);
+Navigation.registerComponent('ContactPage',()=>Contact);
 
-Navigation.events().registerAppLaunchedListener(() => {
-  Navigation.setRoot({
-    root: {
-      stack: {
-        children: [
-          {
-            component: {
-              name: 'com.myApp.App',
-            },
-          },
-        ],
-      },
-    },
-  });
-});
+Navigation.events().registerAppLaunchedListener(()=>{
+    Navigation.setRoot({
+        root:{
+            component:{
+                name:'ContactPage'
+            }
+        }
+    });
+})
