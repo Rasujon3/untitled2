@@ -26,8 +26,25 @@ Navigation.events().registerAppLaunchedListener(() => {
 
                 },
                 center:{
-                    component:{
-                        name:"HomePage"
+                    stack:{
+                        options:{
+                            topBar:{
+                                leftButtons:{
+                                    icon:require('./images/menu.png')
+                                },
+                                rightButtons:{
+                                    icon:require('./images/menu.png')
+                                }
+                            }
+                        },
+                        children:[
+                            {
+                                component:{
+                                    name:"HomePage"
+                                }
+                            }
+                        ]
+
                     }
 
                 },
