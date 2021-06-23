@@ -2,25 +2,50 @@ import {Navigation} from "react-native-navigation";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
+import Service from "./Service";
+import Policy from "./Policy";
 
 Navigation.registerComponent('HomePage', () => Home);
 Navigation.registerComponent('AboutPage', () => About);
 Navigation.registerComponent('ContactPage', () => Contact);
+Navigation.registerComponent('ServicePage', () => Service);
+Navigation.registerComponent('PolicyPage', () => Policy);
 
-const component = {
-    id: "homeID",
-    name: 'HomePage',
-    options: {},
-    passProps: {
-        pageTitle: "Home Page Title",
-        pageSubTitle: "Home Page subtitle",
-    }
+const stack={
+    children:[
+        {
+            component:{
+                name:'PolicyPage'
+            }
+        },
+        {
+            component:{
+                name:'ServicePage'
+            }
+        },
+        {
+            component:{
+                name:'ContactPage'
+            }
+        },
+        {
+            component:{
+                name:'AboutPage'
+            }
+        },
+        {
+            component:{
+                name:'HomePage'
+            }
+        }
+    ],
+    option:{}
 }
 
 Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setRoot({
         root: {
-            component
+            stack
         }
     });
 })

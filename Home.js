@@ -10,8 +10,7 @@ class Home extends Component {
   render() {
     return (
       <View>
-        <Text style={{fontSize: 40}}>{this.props.pageTitle}</Text>
-        <Text style={{fontSize: 20}}>{this.props.pageSubTitle}</Text>
+        <Text style={{fontSize: 40}}>This is Home</Text>
       </View>
     );
   }
