@@ -14,6 +14,9 @@ class Home extends Component {
                             text:'Login'
                         }
                     }
+                },
+                passProps:{
+                    subtitle:'I am pass from home to login'
                 }
             }
         })
@@ -29,6 +32,9 @@ class Home extends Component {
                             text:'Registration'
                         }
                     }
+                },
+                passProps:{
+                    subtitle:'I am pass from home to registration'
                 }
             }
         })
