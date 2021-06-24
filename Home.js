@@ -4,6 +4,16 @@ import {Navigation} from "react-native-navigation";
 
 class Home extends Component {
 
+    static options(){
+        return{
+            topBar:{
+                title:{
+                    text:"Home"
+                }
+            }
+        }
+    }
+
     constructor(props) {
         super(props);
         Navigation.events().bindComponent(this)
