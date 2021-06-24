@@ -1,11 +1,5 @@
 import {Navigation} from "react-native-navigation";
 import Home from "./Home";
-import About from "./About";
-import Contact from "./Contact";
-import Service from "./Service";
-import Policy from "./Policy";
-import Login from "./Login";
-import Registration from "./Registration";
 import SideMenuScreen from "./SideMenuScreen";
 
 
@@ -30,9 +24,6 @@ Navigation.events().registerAppLaunchedListener(() => {
                         options:{
                             topBar:{
                                 leftButtons:{
-                                    icon:require('./images/menu.png')
-                                },
-                                rightButtons:{
                                     icon:require('./images/menu.png')
                                 }
                             }
