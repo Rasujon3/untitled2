@@ -6,7 +6,6 @@ import About from "./About";
 import Profile from "./Profile";
 
 
-
 Navigation.registerComponent('HomePage', () => Home);
 Navigation.registerComponent('SideMenuScreenPage', () => SideMenuScreen);
 
@@ -15,30 +14,31 @@ Navigation.registerComponent('AboutPage', () => About);
 Navigation.registerComponent('ProfilePage', () => Profile);
 
 
-
 Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setRoot({
         root: {
-            sideMenu:{
-                left:{
-                    component:{
-                        name:"SideMenuScreenPage"
+            sideMenu: {
+                left: {
+                    component: {
+                        name: "SideMenuScreenPage"
                     }
 
                 },
-                center:{
-                    stack:{
-                        options:{
-                            topBar:{
-                                leftButtons:{
-                                    icon:require('./images/menu.png')
-                                }
-                            }
-                        },
-                        children:[
+                center: {
+                    stack: {
+                        id: "CenterScreen",
+
+                        children: [
                             {
-                                component:{
-                                    name:"HomePage"
+                                component: {
+                                    name: "HomePage",
+                                     options: {
+                                        topBar: {
+                                            leftButtons: {
+                                                icon: require('./images/menu.png')
+                                            }
+                                        }
+                                    },
                                 }
                             }
                         ]
@@ -46,9 +46,9 @@ Navigation.events().registerAppLaunchedListener(() => {
                     }
 
                 },
-                right:{
-                    component:{
-                        name:"SideMenuScreenPage"
+                right: {
+                    component: {
+                        name: "SideMenuScreenPage"
                     }
 
                 },
