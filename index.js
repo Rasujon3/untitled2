@@ -1,11 +1,18 @@
 import {Navigation} from "react-native-navigation";
 import Home from "./Home";
 import SideMenuScreen from "./SideMenuScreen";
+import Contact from "./Contact";
+import About from "./About";
+import Profile from "./Profile";
 
 
 
 Navigation.registerComponent('HomePage', () => Home);
 Navigation.registerComponent('SideMenuScreenPage', () => SideMenuScreen);
+
+Navigation.registerComponent('ContactPage', () => Contact);
+Navigation.registerComponent('AboutPage', () => About);
+Navigation.registerComponent('ProfilePage', () => Profile);
 
 
 
